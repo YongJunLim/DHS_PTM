@@ -9,14 +9,14 @@
 - What a booking system for Dunman High School's parent-teacher meetings should be
 - Designed & Created by Lim Yong Jun & Chiang Yu Hsuan from 19Y6C33
 
-#### Screenshots:
+### Screenshots:
 
 Homepage
 
-![Homepage](https://codepen.io/YJLIM/pen/jdKgvB/image/small.png)
+![Homepage](https://codepen.io/YJLIM/pen/jdKgvB/image/large.png)
 
 
 Sign In
 
-![Sign In](https://codepen.io/YJLIM/pen/aXGryb/image/small.png)
+![Sign In](https://codepen.io/YJLIM/pen/aXGryb/image/large.png)
 
