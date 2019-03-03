@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+			<title>PTM Booking System</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href=
+			"https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+			<link rel="stylesheet" href=
+			"https://indestructibletype.com/fonts/Jost.css">
+			<link rel="stylesheet" type="text/css" href=
+			"{{ url_for('static', filename='css/layout.css') }}">
+			<link rel="icon" type="image/png" sizes="32x32" href=
+			"{{ url_for('static', filename='img/favicon-32x32.png') }}">
+			<link rel="apple-touch-icon-precomposed" sizes="180x180"
+			href="{{ url_for('static', filename='img/favicon-180x180.png') }}">
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            {% block nav %}
+                <nav class="navbar is-info">
+            	    <div class="navbar-brand">
+            			<span id="nav-title" class="navbar-item">
+            			    <img id="nav-icon" src="
+    						{{ url_for('static', filename='img/dhs_logo.svg') }}"
+    						alt="DHS">
+            			    PTM Booking System
+            			</span>
+                        <span class="navbar-burger burger" data-target="navMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+            		</div>
+            		<div id="navMenu" class="navbar-menu">
+            		    <div class="navbar-end">
+    						{%- if request.path == url_for('about') -%}
+        						<a href="/dashboard" class="navbar-item">
+        							Dashboard
+        						</a>
+    						{% else %}
+        						<a href="/about" class="navbar-item">
+        							About
+        						</a>
+    						{% endif %}
+    						{%- if email -%}
+        						<a href="/google/logout" class="navbar-item">
+        							Sign Out
+        						</a>
+    						{% else %}
+        						<a href="/dashboard" class="navbar-item">
+        							Sign In
+        						</a>
+    						{% endif %}
+                        </div>
+                    </div>
+            	</nav>
+        	{% endblock %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+    	<script src="{{ url_for('static', filename='js/layout.js') }}"></script>
+    </body>
+</html>

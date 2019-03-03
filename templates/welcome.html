@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <section class="hero is-info is-bold is-medium is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            {% block nav %}{{ super() }}{% endblock %}
+        </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container is-fluid has-text-centered">
+                <h1 class="title">
+                    Dunman High<br>Parent-Teacher Meeting Booking System
+                </h1>
+                <h2 class="subtitle is-5">
+                    Simplify meetings with teachers
+                </h2>
+                <a href="/dashboard"
+                class="button is-medium is-info is-inverted is-outlined">
+                    Sign in with Google
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+{% endblock %}

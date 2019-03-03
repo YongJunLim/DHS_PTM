@@ -1,0 +1,17 @@
+body, input, button {
+	font-family: "Jost",-apple-system,system-ui,BlinkMacSystemFont,
+	"Segoe UI",Roboto,sans-serif;
+}
+
+.title,.subtitle {
+	text-align: center;
+	font-weight: 500;
+}
+
+#nav-icon {
+	margin-right: 0.5em;
+}
+
+#nav-title {
+	font-size: 1.25rem;
+}

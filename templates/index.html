@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="section is-centered">
+        <div class="container is-fluid">
+            <h1 class="title">
+                Good <span class="timeDay">Morning</span> {{ name }}
+            </h1>
+            <h2 class="subtitle">{{ email }}</h2>
+            <h4 class="title is-4">
+                Timeslot Booking Chart
+            </h4>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="tags">
+                    <span class="tag">Available</span>
+                    <span class="tag is-success">Booked</span>
+                    <span class="tag is-dark">Blocked</span>
+                </div>
+            </div>
+            <table id="slots" class="table is-bordered is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Teachers/Civics Tutors</th>
+                        <th class="time" id="1">17:00<br> - <br>17:10</th>
+                        <th class="time" id="2">17:10<br> - <br>17:20</th>
+                        <th class="time" id="3">17:20<br> - <br>17:30</th>
+                        <th class="time" id="4">17:30<br> - <br>17:40</th>
+                        <th class="time" id="5">17:40<br> - <br>17:50</th>
+                        <th class="time" id="6">17:50<br> - <br>18:00</th>
+                        <th class="time" id="7">18:00<br> - <br>18:10</th>
+                        <th class="time" id="8">18:10<br> - <br>18:20</th>
+                        <th class="time" id="9">18:20<br> - <br>18:30</th>
+                        <th class="time" id="10">18:30<br> - <br>18:40</th>
+                        <th class="time" id="11">18:40<br> - <br>18:50</th>
+                        <th class="time" id="12">18:50<br> - <br>19:00</th>
+                        <th class="time" id="13">19:00<br> - <br>19:10</th>
+                        <th class="time" id="14">19:10<br> - <br>19:20</th>
+                        <th class="time" id="15">19:20<br> - <br>19:30</th>
+                        <th class="time" id="16">19:30<br> - <br>19:40</th>
+                        <th class="time" id="17">19:40<br> - <br>19:50</th>
+                        <th class="time" id="18">19:50<br> - <br>20:00</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for teacher in teachers %}
+                        <tr>
+                            <td>
+                                <strong>
+                                    {% if teacher in CTs and subjects[loop.index0] != 'CT' %}
+                                        CT<br>
+                                    {% endif %}
+                                    {{ subjects[loop.index0] }}<br>
+                                </strong>
+                                <span id="teacher">{{ teacher }}</span>
+                            </td>
+                            {% for slot in slots[loop.index0] %}
+                                {% if slot is none %}
+                                    <td></td>
+                                {% elif slot == email %}
+                                    <td class="is-booked"></td>
+                                {% else %}
+                                    <td class="is-blocked"></td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="control">
+                    <form action="/dashboard" method="POST">
+                        <button type="submit" name="Bookings"
+                        class="button is-link">
+                            Update Booking
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+	    </div>
+	</section>
+{% endblock %}
