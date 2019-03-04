@@ -19,6 +19,17 @@ google-api-python-client
 google-auth
 ```
 
+Specify environment variables in WSGI. It can be done in this format:
+```
+import os
+
+os.environ['FN_AUTH_REDIRECT_URI'] = 'https://<BASE_URI>/google/auth'
+os.environ['FN_BASE_URI'] = '<BASE_URI>'
+os.environ['FN_CLIENT_ID'] = '<CLIENT_ID>'
+os.environ['FN_CLIENT_SECRET'] = '<CLIENT_SECRET>'
+os.environ['FN_FLASK_SECRET_KEY'] = '<SECRET_KEY>'
+```
+
 ### Installing
 
 On PythonAnywhere, ensure the corresponding Python version used is specified and '--user' appears before the module name when installing with pip
