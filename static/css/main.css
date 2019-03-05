@@ -1,27 +1,27 @@
-table {
-  margin: auto;
-  overflow-x: auto;
-  display: block;
-  background-color: #D7D9F2;
+.time {
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 
-.time {
-  font-size: 0.8rem;
-  font-weight: 400;
+table {
+    margin: auto;
+    overflow-x: auto;
+    display: block;
+    background-color: #D7D9F2;
 }
 
 .table td.is-booked {
-  background-color: #23D160;
+    background-color: #23D160;
 }
 
 .table td.is-blocked {
-  background-color: #363636;
+    background-color: #363636;
 }
 
 .table td.is-selected {
-  background-color: #00D1B2;
+    background-color: #00D1B2;
 }
 
 .table td.is-cancelled {
-  background-color: #FF3860;
+    background-color: #FF3860;
 }
