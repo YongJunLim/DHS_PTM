@@ -4,11 +4,11 @@ var table = document.getElementById('slots')
 var selects = []
 
 if (currHours < 12) {
-  document.querySelector('.timeDay').innerHTML = "Morning"
+  document.querySelector('.timeDay').textContent = "Morning"
 } else if (currHours < 18) {
-  document.querySelector('.timeDay').innerHTML = "Afternoon"
+  document.querySelector('.timeDay').textContent = "Afternoon"
 } else {
-  document.querySelector('.timeDay').innerHTML = "Evening"
+  document.querySelector('.timeDay').textContent = "Evening"
 };
 
 update.addEventListener('click', function(event) {
@@ -20,7 +20,7 @@ update.addEventListener('click', function(event) {
         // iterate through columns
         // columns would be accessed using the "col" variable assigned in the for loop
             if (table.rows[i].cells[j].classList.contains('is-booked')) {
-                selects.push(table.rows[i].cells[0].querySelector("#teacher").innerHTML)
+                selects.push(table.rows[i].cells[0].querySelector("#teacher").textContent)
                 selects.push(table.rows[0].cells[j].id)
             }
         }
