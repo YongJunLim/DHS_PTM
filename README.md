@@ -52,6 +52,11 @@ pip3.7 install --user google-auth
 * **Lim Yong Jun** - Flask & Frontend
 * **Chiang Yu Hsuan** - Flask & SQLite
 
+## Screenshots
+
+![Homepage](https://i.imgur.com/1EeH3Rl.png)
+![Dashboard](https://i.imgur.com/O2ZQKdW.png)
+
 ## Acknowledgments
 
 * [Matt Button](https://www.mattbutton.com/2019/01/05/google-authentication-with-python-and-flask/) - Google authentication with Python and Flask
